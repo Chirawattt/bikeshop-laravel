@@ -12,16 +12,19 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/toastr/build/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- js --}}
     <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/build/toastr.min.js') }}"></script>
+
+
 </head>
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#" class="navbar-brand">BikeShop</a>
+                <a href="/product" class="navbar-brand">BikeShop</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

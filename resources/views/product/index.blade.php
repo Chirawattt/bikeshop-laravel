@@ -4,40 +4,66 @@
 @endsection
 @section('content')
     <h1 class="text-center">รายการสินค้าทั้งหมด</h1>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>รูปสินค้า</th>
-                <th>รหัส</th>
-                <th>ชื่อสินค้า</th>
-                <th>ประเภท</th>
-                <th>คงเหลือ</th>
-                <th>ราคาต่อหน่วย</th>
-                <th>การทำงาน</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($products as $item)
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title"><strong>รายการ</strong></div>
+        </div>
+        <div class="panel-body">
+            {{-- search from --}}
+            <form action="/product/search" method="POST" class="form-group">
+                @csrf
+                <div class="col-xs-10">
+                    <input type="text" name="q" class="form-control" placeholder="ค้นหาสิ่งที่ต้องการ . . .">
+                </div>
+                <button type="submit" class="btn btn-primary col-xs-2">ค้นหา</button>
+                @error('queryError')
+                    <script>
+                        toastr.error(@json($message), 'เกิดข้อผิดพลาด');
+                    </script>
+                @enderror
+            </form>
+        </div>
+        <table class="table table-bordered bs_table">
+            <thead>
                 <tr>
-                    <td> {{ $item->image_url }} </td>
-                    <td> {{ $item->code }} </td>
-                    <td> {{ $item->name }} </td>
-                    <td> {{ $item->category->name }} </td>
-                    <td> {{ number_format($item->stock_qty, 0) }} </td>
-                    <td> {{ number_format($item->price, 2) }} </td>
-                    <td>
-                        <a href="#" class="btn btn-info"><i class="fa fa-edit"></i> แก้ไข</a>
-                        <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> ลบ</a>
-                    </td>
+                    <th>รูปสินค้า</th>
+                    <th>รหัส</th>
+                    <th>ชื่อสินค้า</th>
+                    <th>ประเภท</th>
+                    <th class="bs_price">คงเหลือ</th>
+                    <th class="bs_price">ราคาต่อหน่วย</th>
+                    <th class="bs_center">การทำงาน</th>
                 </tr>
-            @endforeach
-        </tbody>
-        <tfoot>
-            <tr>
-                <th colspan="4">รวม</th>
-                <th>{{ $products->sum('stock_qty') }}</th>
-                <th>{{ number_format($products->sum('price'), 2) }}</th>
-            </tr>
-        </tfoot>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($products as $item)
+                    <tr>
+                        <td> {{ $item->image_url }} </td>
+                        <td> {{ $item->code }} </td>
+                        <td> {{ $item->name }} </td>
+                        <td> {{ $item->category->name }} </td>
+                        <td class="bs_price"> {{ number_format($item->stock_qty, 0) }} </td>
+                        <td class="bs_price"> {{ number_format($item->price, 2) }} </td>
+                        <td class="bs_center">
+                            <a href="#" class="btn btn-info"><i class="fa fa-edit"></i> แก้ไข</a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> ลบ</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">รวม</th>
+                    <th class="bs_price">{{ $products->sum('stock_qty') }}</th>
+                    <th class="bs_price">{{ number_format($products->sum('price'), 2) }}</th>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="panel-footer text-center">
+            แสดงข้อมูลจำนวน {{ count($products) }} รายการ
+        </div>
+    </div>
+    <div class="text-center">
+        {{ $products->links() }}
+    </div>
 @endsection

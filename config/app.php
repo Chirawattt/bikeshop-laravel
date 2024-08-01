@@ -232,4 +232,6 @@ return [
 
     ],
 
+    // Config result per page here
+    'result_per_page' => 2,
 ];
