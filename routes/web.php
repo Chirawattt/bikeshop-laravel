@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mainController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +15,4 @@ use App\Http\Controllers\mainController;
 */
 
 Route::get('/', [mainController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index']);
