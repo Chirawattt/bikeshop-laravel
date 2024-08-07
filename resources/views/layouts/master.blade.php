@@ -28,8 +28,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">หน้าแรก</a></li>
-                    <li><a href="#">ข้อมูลสินค้า</a></li>
+                    <li><a href="/product">หน้าแรก</a></li>
+                    <li><a href="/product">ข้อมูลสินค้า</a></li>
                     <li><a href="#">รายงาน</a></li>
                 </ul>
             </div>
