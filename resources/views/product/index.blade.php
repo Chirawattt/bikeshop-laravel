@@ -6,7 +6,10 @@
     <h1 class="text-center">รายการสินค้าทั้งหมด</h1>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <div class="panel-title"><strong>รายการ</strong></div>
+            <div style="display: flex; justify-content: space-between; place-items: center">
+                <div class="panel-title"><strong>รายการ</strong></div>
+                <a href="/product/edit" class="btn btn-success" style="padding: 8px 16px;">เพิ่มสินค้า</a>
+            </div>
         </div>
         <div class="panel-body">
             {{-- search from --}}
@@ -38,7 +41,7 @@
             <tbody>
                 @foreach ($products as $item)
                     <tr>
-                        <td> {{ $item->image_url }} </td>
+                        <td> <img src="{{ $item->image_url }}" alt="Product Image" width="50px"></td>
                         <td> {{ $item->code }} </td>
                         <td> {{ $item->name }} </td>
                         <td> {{ $item->category->name }} </td>

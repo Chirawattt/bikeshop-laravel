@@ -178,6 +178,8 @@ return [
         // laravel collective form
         Collective\Html\HtmlServiceProvider::class,
 
+        // intervention image
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -232,10 +234,15 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // Collcective html form
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        // Intervention image
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
     // Config result per page here
-    'result_per_page' => 2,
+    'result_per_page' => 10,
 ];

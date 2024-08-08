@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @section('title')
-    แก้ไขข้อมูลสินค้า
+    เพิ่มข้อมูลสินค้า
 @endsection
 @section('content')
-    <h1 class="text-center">แก้ไขสินค้า</h1>
+    <h1 class="text-center">เพิ่มสินค้า</h1>
     <ul class="breadcrumb">
         <li><a href="/product">หน้าแรก</a></li>
-        <li class="active">แก้ไขสินค้า</li>
+        <li class="active">เพิ่มสินค้า</li>
     </ul>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -15,34 +15,27 @@
             @endforeach
         </div>
     @endif
-    {!! Form::model($product, [
+    {!! Form::open([
         'method' => 'POST',
         'enctype' => 'multipart/form-data',
-        'action' => 'App\Http\Controllers\ProductController@update',
-        // 'url' => '/product/update',
+        'action' => 'App\Http\Controllers\ProductController@insert',
+        // 'url' => '/product/insert',
     ]) !!}
-    <input type="hidden" name="id" value="{{ $product->id }}">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="panel-title">
-                <strong>ข้อมูลสินค้า</strong>
+                <strong>เพิ่มข้อมูลสินค้า</strong>
             </div>
         </div>
         <div class="panel-body">
             <table class="col-xs-12">
-                @if ($product->image_url)
-                    <tr>
-                        <td class="text-right col-xs-2"><strong>รูปสินค้า :</strong></td>
-                        <td><img src="{{ URL::to($product->image_url) }}" alt="Product Image" width="300px"></td>
-                    </tr>
-                @endif
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('code', 'รหัสสินค้า :') }}</td>
-                    <td>{{ Form::text('code', $product->code, ['class' => 'form-control']) }}</td>
+                    <td>{{ Form::text('code', Request::old('code'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('name', 'ชื่อสินค้า :') }}</td>
-                    <td>{{ Form::text('name', $product->name, ['class' => 'form-control']) }}</td>
+                    <td>{{ Form::text('name', Request::old('name'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('category_id', 'ประเภทสินค้า :') }}</td>
@@ -51,11 +44,11 @@
                 </tr>
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('stock_qty', 'จำนวนสินค้าในสต็อก :') }}</td>
-                    <td>{{ Form::text('stock_qty', $product->stock_qty, ['class' => 'form-control']) }}</td>
+                    <td>{{ Form::text('stock_qty', Request::old('stock_qty'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('price', 'ราคาขายต่อหน่วย :') }}</td>
-                    <td>{{ Form::text('price', $product->price, ['class' => 'form-control']) }}</td>
+                    <td>{{ Form::text('price', Request::old('price'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
                     <td class="text-right col-xs-2">{{ Form::label('image', 'เลือกรูปภาพสินค้า :') }}</td>

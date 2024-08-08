@@ -39,9 +39,18 @@
         @yield('content')
     </div>
 
-
-
     {{-- js --}}
+    @if (session('message'))
+        @if (session('status'))
+            <script>
+                toastr.success("{{ session('message') }}")
+            </script>
+        @else
+            <script>
+                toastr.error("{{ session('message') }}")
+            </script>
+        @endif
+    @endif
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 

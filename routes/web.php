@@ -18,5 +18,6 @@ Route::get('/', [ProductController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/search', [ProductController::class, 'search']);
 Route::post('/product/search', [ProductController::class, 'search']);
+Route::post('/product/insert', [ProductController::class, 'insert']);
 Route::get('/product/edit/{id?}', [ProductController::class, 'edit']);
 Route::post('/product/update', [ProductController::class, 'update']);
