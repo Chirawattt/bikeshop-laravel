@@ -177,9 +177,6 @@ return [
 
         // laravel collective form
         Collective\Html\HtmlServiceProvider::class,
-
-        // intervention image
-        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -239,8 +236,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
-        // Intervention image
-        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
     // Config result per page here

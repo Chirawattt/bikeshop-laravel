@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
-use Intervention\Image\Facades\Image;
 use App\Models\Product;
 use App\Models\Category;
 // paginate import
@@ -132,5 +131,11 @@ class ProductController extends Controller
             }
             return redirect('/product')->with('status', true)->with('message', 'เพิ่มข้อมูลเรียบร้อยแล้ว');
         }
+    }
+
+    public function remove($id)
+    {
+        Product::find($id)->delete();
+        return redirect('/product')->with('status', true)->with('message', 'ลบข้อมูลเรียบร้อยแล้ว');
     }
 }
