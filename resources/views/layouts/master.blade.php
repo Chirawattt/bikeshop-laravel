@@ -30,12 +30,14 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/product">หน้าแรก</a></li>
                     <li><a href="/product">ข้อมูลสินค้า</a></li>
+                    <li><a href="/category">ข้อมูลประเภทสินค้า</a></li>
                     <li><a href="#">รายงาน</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
+        <h2 class="text-center">นาย จีรวัฒน์ ญานะ 6506021611017</h2>
         @yield('content')
     </div>
 
