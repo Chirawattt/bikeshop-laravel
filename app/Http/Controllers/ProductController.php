@@ -39,7 +39,7 @@ class ProductController extends Controller
             return view('product/index', compact('products'));
         } else {
             $products = Product::paginate($this->rp);
-            return redirect()->back()->withErrors(['queryError' => 'โปรดใส่คำค้นหา!']);
+            return redirect()->back()->with('status', false)->with('message', 'โปรดกรอกคำค้นหา');
         }
     }
 

@@ -19,11 +19,6 @@
                     <input type="text" name="q" class="form-control" placeholder="ค้นหาสิ่งที่ต้องการ . . .">
                 </div>
                 <button type="submit" class="btn btn-primary col-xs-2">ค้นหา</button>
-                @error('queryError')
-                    <script>
-                        toastr.error(@json($message), 'เกิดข้อผิดพลาด');
-                    </script>
-                @enderror
             </form>
         </div>
         <table class="table table-bordered bs_table">
@@ -41,7 +36,7 @@
             <tbody>
                 @foreach ($products as $item)
                     <tr>
-                        <td> <img src="{{ $item->image_url }}" alt="Product Image" width="50px"></td>
+                        <td class="bs_center"> <img src="{{ $item->image_url }}" alt="Product Image" width="50px"></td>
                         <td> {{ $item->code }} </td>
                         <td> {{ $item->name }} </td>
                         <td> {{ $item->category->name }} </td>

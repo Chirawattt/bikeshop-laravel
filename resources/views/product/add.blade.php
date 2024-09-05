@@ -28,30 +28,34 @@
             </div>
         </div>
         <div class="panel-body">
-            <table class="col-xs-12">
-                <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('code', 'รหัสสินค้า :') }}</td>
-                    <td>{{ Form::text('code', Request::old('code'), ['class' => 'form-control']) }}</td>
+            <table class="col-xs-10">
+                <tr style="gap: 20px;">
+                    <td class="text-right">
+                        {{ Form::label('code', 'รหัสสินค้า :', ['class' => 'text']) }}</td>
+                    <td> {{ Form::text('code', Request::old('code'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('name', 'ชื่อสินค้า :') }}</td>
+                    <td class="text-right">{{ Form::label('name', 'ชื่อสินค้า :') }}</td>
                     <td>{{ Form::text('name', Request::old('name'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('category_id', 'ประเภทสินค้า :') }}</td>
+                    <td class="text-right">{{ Form::label('category_id', 'ประเภทสินค้า :') }}
+                    </td>
                     <td>{{ Form::select('category_id', $categories, Request::old('category_id'), ['class' => 'form-control']) }}
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('stock_qty', 'จำนวนสินค้าในสต็อก :') }}</td>
+                    <td class="text-right">
+                        {{ Form::label('stock_qty', 'จำนวนสินค้าในสต็อก :') }}</td>
                     <td>{{ Form::text('stock_qty', Request::old('stock_qty'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('price', 'ราคาขายต่อหน่วย :') }}</td>
+                    <td class="text-right">{{ Form::label('price', 'ราคาขายต่อหน่วย :') }}</td>
                     <td>{{ Form::text('price', Request::old('price'), ['class' => 'form-control']) }}</td>
                 </tr>
                 <tr>
-                    <td class="text-right col-xs-2">{{ Form::label('image', 'เลือกรูปภาพสินค้า :') }}</td>
+                    <td class="text-right">{{ Form::label('image', 'เลือกรูปภาพสินค้า :') }}
+                    </td>
                     <td>{{ Form::file('image') }}</td>
                 </tr>
             </table>

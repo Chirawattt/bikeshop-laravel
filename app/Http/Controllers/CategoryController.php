@@ -35,7 +35,7 @@ class CategoryController extends Controller
             return view('category/index', compact('categories'));
         } else {
             $categories = Category::paginate($this->rp);
-            return redirect()->back()->withErrors(['queryError' => 'โปรดใส่คำค้นหา!']);
+            return redirect()->back()->with('status', false)->with('message', 'โปรดกรอกคำค้นหา');
         }
     }
 

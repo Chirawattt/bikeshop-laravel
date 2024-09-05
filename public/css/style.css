@@ -18,3 +18,20 @@
 .border-red {
     border: 1px solid red;
 }
+
+td.text-right {
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+td:not(.text-right) {
+    padding-top: 10px;
+}
+
+tr.tr-th-center th {
+    text-align: center;
+}
+
+tr.tr-td-center * {
+    text-align: center;
+}

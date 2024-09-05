@@ -28,7 +28,7 @@
         </div>
         <table class="table table-bordered bs_table">
             <thead>
-                <tr>
+                <tr class="tr-th-center">
                     <th>รหัส</th>
                     <th>ชื่อประเภท</th>
                     <th>การทำงาน</th>
@@ -36,7 +36,7 @@
             </thead>
             <tbody>
                 @foreach ($categories as $item)
-                    <tr>
+                    <tr class="tr-td-center">
                         <td> {{ $item->id }} </td>
                         <td> {{ $item->name }} </td>
                         <td class="bs_center">
