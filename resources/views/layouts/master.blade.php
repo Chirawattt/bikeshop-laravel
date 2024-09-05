@@ -16,7 +16,7 @@
     {{-- js --}}
     <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/build/toastr.min.js') }}"></script>
-
+    <script src="{{ asset('js/angular.min.js') }}"></script>
 
 </head>
 
@@ -28,7 +28,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/product">หน้าแรก</a></li>
+                    <li><a href="/home">หน้าแรก</a></li>
                     <li><a href="/product">ข้อมูลสินค้า</a></li>
                     <li><a href="/category">ข้อมูลประเภทสินค้า</a></li>
                     <li><a href="#">รายงาน</a></li>
@@ -37,7 +37,7 @@
         </div>
     </nav>
     <div class="container">
-        <h2 class="text-center">นาย จีรวัฒน์ ญานะ 6506021611017</h2>
+        <h4 class="text-center">นาย จีรวัฒน์ ญานะ 6506021611017</h2>
         @yield('content')
     </div>
 

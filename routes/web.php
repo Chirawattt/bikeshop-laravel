@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -16,6 +17,10 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/home', [HomeController::class, 'index']);
+
 
 Route::get('/', [ProductController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);

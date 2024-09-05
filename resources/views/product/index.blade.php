@@ -41,7 +41,7 @@
             <tbody>
                 @foreach ($products as $item)
                     <tr>
-                        <td> <img src="{{ $item->image_url }}" alt="Product Image" width="50px"></td>
+                        <td align="center"> <img src="{{ URL::to($item->image_url) }}" alt="Product Image" width="50px"></td>
                         <td> {{ $item->code }} </td>
                         <td> {{ $item->name }} </td>
                         <td> {{ $item->category->name }} </td>
@@ -87,3 +87,4 @@
         })
     </script>
 @endsection
+{{-- test  --}}
