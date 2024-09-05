@@ -36,7 +36,11 @@
             <tbody>
                 @foreach ($products as $item)
                     <tr>
+<<<<<<< HEAD
                         <td class="bs_center"> <img src="{{ $item->image_url }}" alt="Product Image" width="50px"></td>
+=======
+                        <td align="center"> <img src="{{ URL::to($item->image_url) }}" alt="Product Image" width="50px"></td>
+>>>>>>> 46e4174e78886715e609d6e121d67279513a25c6
                         <td> {{ $item->code }} </td>
                         <td> {{ $item->name }} </td>
                         <td> {{ $item->category->name }} </td>
@@ -82,3 +86,4 @@
         })
     </script>
 @endsection
+{{-- test  --}}

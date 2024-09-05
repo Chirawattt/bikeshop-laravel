@@ -16,7 +16,7 @@
     {{-- js --}}
     <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/build/toastr.min.js') }}"></script>
-
+    <script src="{{ asset('js/angular.min.js') }}"></script>
 
 </head>
 
@@ -29,6 +29,10 @@
             <p class="navbar-text navbar-left">นายจีรวัฒน์ ญานะ 6506021611017</p>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
+=======
+                    <li><a href="/home">หน้าแรก</a></li>
+>>>>>>> 46e4174e78886715e609d6e121d67279513a25c6
                     <li><a href="/product">ข้อมูลสินค้า</a></li>
                     <li><a href="/category">ข้อมูลประเภทสินค้า</a></li>
                 </ul>
@@ -36,6 +40,10 @@
         </div>
     </nav>
     <div class="container">
+<<<<<<< HEAD
+=======
+        <h4 class="text-center">นาย จีรวัฒน์ ญานะ 6506021611017</h2>
+>>>>>>> 46e4174e78886715e609d6e121d67279513a25c6
         @yield('content')
     </div>
 
