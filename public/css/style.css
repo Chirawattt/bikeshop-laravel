@@ -15,6 +15,35 @@
     text-align: center;
 }
 
+.bs-product-card {
+    min-height: 380px;
+    text-align: center;
+    position: relative;
+}
+
+.bs-product-card .img-frame {
+    height: 90px;
+    margin-top: 20px;
+}
+
+.bs-product-card .btn-success {
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 30px);
+}
+.bs-product-card h5 {
+    font-size: 17px;
+    text-align: left;
+}
+
+.bs-product-card .form-group {
+    text-align: left;
+}
+
+.bs-product-card .form-group strong {
+    font-size: 16px;
+}
+
 .border-red {
     border: 1px solid red;
 }

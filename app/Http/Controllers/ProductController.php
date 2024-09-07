@@ -98,11 +98,12 @@ class ProductController extends Controller
 
     public function insert(Request $request)
     {
-        $rule = ['code' => 'required', 'name' => 'required', 'category_id' => 'required|numeric', 'stock_qty' => 'required|numeric', 'price' => 'required|numeric'];
-        $message = ['required' => 'โปรดกรอกข้อมูล :attribute', 'numeric' => 'โปรดกรอกข้อมูล :attribute เป็นตัวเลข'];
+        $rule = ['code' => 'required|max:10', 'name' => 'required|max:50', 'category_id' => 'required|numeric', 'stock_qty' => 'required|numeric', 'price' => 'required|numeric'];
+        $message = ['required' => 'โปรดกรอกข้อมูล :attribute', 'numeric' => 'โปรดกรอกข้อมูล :attribute เป็นตัวเลข', 'max' => 'โปรดกรอกข้อมูล :attribute ไม่เกิน :max ตัวอักษร'];
         $attributes = ['code' => 'รหัสสินค้า', 'name' => 'ชื่อสินค้า', 'category_id' => 'ประเภทสินค้า', 'price' => 'ราคาขายต่อหน่วย', 'stock_qty' => 'จำนวนสินค้าในสต็อก'];
         $temp = ['code' => $request->code, 'name' => $request->name, 'category_id' => $request->category_id, 'price' => $request->price, 'stock_qty' => $request->stock_qty];
         $validator = Validator::make($temp, $rule, $message, $attributes);
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {

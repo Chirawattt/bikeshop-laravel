@@ -239,5 +239,5 @@ return [
     ],
 
     // Config result per page here
-    'result_per_page' => 10,
+    'result_per_page' => 5,
 ];
