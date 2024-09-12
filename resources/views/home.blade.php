@@ -8,6 +8,7 @@
             <h2 class="text-center">สินค้าในร้าน</h2>
             <div class="list-group" style="cursor: pointer">
                 <a class="list-group-item" ng-class="{'active': category == null }" ng-click="getProductList(null)">ทั้งหมด</a>
+                
                 <a class="list-group-item" ng-repeat="c in categories" ng-click="getProductList(c)"
                     ng-class="{'active': category.id == c.id }">@{c.name}</a>
             </div>
@@ -64,6 +65,7 @@
 
             $scope.products = [];
             $scope.category = {};
+
             // getProductList function of controller 
             $scope.getProductList = function(category) {
                 $scope.category = category;
@@ -78,7 +80,9 @@
                     }
                     $scope.products = res.data.products;
                 });
-            };
+                $scope.query = '';
+            }
+            
             $scope.getCategoryList = function() {
                 productService.getCategoryList().then(function(res) {
                     if (!res.data.ok) {
@@ -95,14 +99,16 @@
                         return;
                     }
                     $scope.products = res.data.products;
+                    console.log($scope.products);
+                    
                 })
             }
+
 
             $scope.getProductList(null);
             // call function to get product list initially by passing null to get all products first
 
             $scope.getCategoryList(); // call function to get category list
-
         });
     </script>
 

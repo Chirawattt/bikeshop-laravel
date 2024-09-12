@@ -46,12 +46,12 @@
                         <td class="bs_center">
                             <a href="/product/edit/{{ $item->id }}" class="btn btn-info"><i class="fa fa-edit"></i>
                                 แก้ไข</a>
-                            <a href="#" class="btn btn-danger btn-delete" id-delete="{{ $item->id }}"><i
-                                    class="fa fa-trash"></i> ลบ</a>
+                            {{-- <a href="#" class="btn btn-danger btn-delete" id-delete="{{ $item->id }}"><i
+                                    class="fa fa-trash"></i> ลบ</a> --}}
 
-                            {{-- <a href="/product/remove/{{ $item->id }}" class="btn btn-danger btn-delete"
+                            <a href="/product/remove/{{ $item->id }}" class="btn btn-danger btn-delete"
                                 onclick="return confirm('คุณต้องการลบข้อมูลสินค้า {{ $item->name }} ใช่หรือไม่')">
-                                <i class="fa fa-trash"></i> ลบ</a> --}}
+                                <i class="fa fa-trash"></i> ลบ</a>
                         </td>
                     </tr>
                 @endforeach
@@ -72,7 +72,7 @@
         {{ $products->links() }}
     </div>
 
-    <script>
+    {{-- <script>
         // jQuery technique
         $('.btn-delete').on('click', function() {
             if (confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')) {
@@ -81,6 +81,6 @@
                 window.location.href = url;
             }
         })
-    </script>
+    </script> --}}
 @endsection
 {{-- test  --}}

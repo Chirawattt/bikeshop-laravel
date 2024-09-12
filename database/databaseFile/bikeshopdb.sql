@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2024 at 07:54 AM
+-- Generation Time: Sep 12, 2024 at 07:44 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -40,7 +40,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'อะไหล่', NULL, NULL),
+(1, 'จักรยาน', NULL, '2024-09-11 23:22:29'),
 (2, 'เครื่องแต่งกาย', NULL, NULL),
 (3, 'รองเท้า', NULL, NULL),
 (4, 'แว่นตา', NULL, NULL),
@@ -140,9 +140,19 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `code`, `name`, `category_id`, `price`, `stock_qty`, `image_url`, `created_at`, `updated_at`) VALUES
-(1, 'P001', 'เสือหมอบ JAVA', 1, 11900.00, 2, 'upload/images/sports-bicycle-hwk.png', NULL, '2024-09-04 23:16:28'),
-(2, 'P002', 'เสือหมอบ วินเทจ Cannello Silvia', 1, 5000.00, 4, 'upload/images/bicycle1.jpg', NULL, NULL),
-(3, 'P003', 'เสือหมอบ Panther March', 1, 6500.00, 2, 'upload/images/bicycle2.png', NULL, NULL);
+(5, 'P001', 'Speed 900 CN FR bike', 1, 7000.00, 6, 'upload/images/speed-900-cn-fr-elops-8597089.jpg', '2024-09-11 23:25:00', '2024-09-11 23:44:46'),
+(6, 'P002', 'EDR AF 105 CN FR road bike', 1, 37000.00, 3, 'upload/images/rode-bike-EDR-AF-105-CN-FR.jpg', '2024-09-11 23:27:53', '2024-09-11 23:45:17'),
+(7, 'P003', 'touring bike Riverside RT 520 (blue)', 1, 24000.00, 4, 'upload/images/touring-bike-riverside-rt-520-bl.jpg', '2024-09-11 23:30:48', '2024-09-11 23:30:48'),
+(8, 'P004', 'Rockrider ST 30 Mountain Bike (White)', 1, 4400.00, 2, 'upload/images/rockrider-ST-30-White.jpg', '2024-09-11 23:31:55', '2024-09-11 23:45:44'),
+(9, 'P005', 'Tilt 900 Folding Bike (Glossy Aluminum)', 1, 11900.00, 6, 'upload/images/tilt-900-folding-bike-lacquered.jpg', '2024-09-11 23:33:28', '2024-09-11 23:46:12'),
+(10, 'P006', 'Riverside 500 bike for children', 1, 4500.00, 7, 'upload/images/riverside-500-kids.jpg', '2024-09-11 23:34:16', '2024-09-11 23:34:16'),
+(11, 'P007', 'Men\'s RC100 Short Sleeve Cycling Jersey', 2, 500.00, 25, 'upload/images/men-s-short-sleeved-road-cycling.jpg', '2024-09-11 23:35:58', '2024-09-11 23:35:58'),
+(12, 'P008', 'Women\'s ST 100 Short-Sleeve Bike Jersey (Navy)', 2, 200.00, 12, 'upload/images/women-s-short-sleeved-mountain-b.jpg', '2024-09-11 23:37:20', '2024-09-11 23:37:30'),
+(13, 'P009', 'Essential Men\'s Bib-Free Cycling Shorts (Black)', 2, 350.00, 26, 'upload/images/essential-men-s-road-cycling-bib.jpg', '2024-09-11 23:39:13', '2024-09-11 23:39:13'),
+(14, 'P010', 'Sunglasses Model ST 100 (Grey)', 4, 150.00, 30, 'upload/images/st-100-mtb-sunglasses-category-3.jpg', '2024-09-11 23:42:06', '2024-09-11 23:42:06'),
+(15, 'P011', 'Sunglasses type 0 lenses, Model ST 100 (Clear)', 4, 150.00, 50, 'upload/images/st-100-mtb-sunglasses-category-0.jpg', '2024-09-11 23:42:52', '2024-09-11 23:42:52'),
+(16, 'P012', 'Race 700 mountain bike shoes (gray)', 3, 1900.00, 8, 'upload/images/mountain-bike-shoes-race-700-gre.jpg', '2024-09-11 23:50:56', '2024-09-11 23:50:56'),
+(17, 'P013', 'Road 100 Cycling Shoes (Black)', 3, 1800.00, 12, 'upload/images/road-cycling-shoes-road-100-blac.jpg', '2024-09-11 23:51:36', '2024-09-11 23:51:36');
 
 -- --------------------------------------------------------
 
@@ -244,7 +254,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
