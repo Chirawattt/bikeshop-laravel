@@ -30,7 +30,7 @@
                                 <div>คงเหลือ: @{p.stock_qty}</div>
                                 <div>ราคา <strong>@{p.price|number:2}</strong> บาท</div>
                             </div>
-                            <a href="#" class="btn btn-success btn-block"><i class="fa fa-shopping-cart">
+                            <a href="#" class="btn btn-success btn-block" ng-click="addToCart(p)"><i class="fa fa-shopping-cart">
                                     หยิบใส่ตะกร้า</i></a>
                         </div>
                     </div>
@@ -58,6 +58,7 @@
                     category_id: category_id
                 });
             }
+            
         });
         // controller
         app.controller('ctrl', function($scope, productService) {
@@ -103,7 +104,9 @@
                     
                 })
             }
-
+            $scope.addToCart = function(p) {
+                window.location.href = '/cart/add/' + p.id;
+            }
 
             $scope.getProductList(null);
             // call function to get product list initially by passing null to get all products first

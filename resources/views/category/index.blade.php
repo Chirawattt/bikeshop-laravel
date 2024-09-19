@@ -3,7 +3,7 @@
     รายการประเภทสินค้า
 @endsection
 @section('content')
-    <h1 class="">ประเภทสินค้าทั้งหมด</h1>
+    <h1 class="text-center">ประเภทสินค้าทั้งหมด</h1>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div style="display: flex; justify-content: space-between; place-items: center">

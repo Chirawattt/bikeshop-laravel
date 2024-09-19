@@ -39,6 +39,16 @@
             <p class="navbar-text navbar-left">นายจีรวัฒน์ ญานะ 6506021611017</p>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
+                    <li><a href="/cart/view">
+                        <i class="fa fa-shopping-cart"></i> ตะกร้า
+                        <span class="label label-danger">
+                            @if (Session::has('cart_items'))
+                                {{ count(Session::get('cart_items')) }}
+                            @else
+                                {{ count([])}}
+                            @endif
+                        </span>
+                    </a></li>
                     <li><a href="/home">หน้าแรก</a></li>
                     <li><a href="/product">ข้อมูลสินค้า</a></li>
                     <li><a href="/category">ประเภทสินค้า</a></li>
