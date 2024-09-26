@@ -21,6 +21,8 @@ class ProductController extends Controller
     {
         // get congif from app.php
         $this->rp = Config::get('app.result_per_page');
+        $this->middleware('auth');
+
     }
 
     public function index()

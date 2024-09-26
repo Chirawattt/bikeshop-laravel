@@ -7,6 +7,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 
+// Import Auth Facade
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +26,7 @@ use App\Http\Controllers\CartController;
 Route::get('/home', [HomeController::class, 'index']);
 
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/search', [ProductController::class, 'search']);
 Route::post('/product/search', [ProductController::class, 'search']);
@@ -46,3 +49,7 @@ Route::get('/cart/view', [CartController::class, 'viewCart']);
 Route::get('/cart/add/{id}', [CartController::class, 'addToCart']);
 Route::get('/cart/delete/{id}', [CartController::class, 'deleteCart']);
 Route::get('/cart/update/{id}/{qty}', [CartController::class, 'updateCart']);
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout', [HomeController::class, 'logout']);

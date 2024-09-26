@@ -34,12 +34,18 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="/product" class="navbar-brand">BikeShop</a>
+                <a href="/home" class="navbar-brand">BikeShop</a>
             </div>
             <p class="navbar-text navbar-left">นายจีรวัฒน์ ญานะ 6506021611017</p>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="/cart/view">
+
+                    @guest
+                    <li><a href="/home">หน้าแรก</a></li>
+                    <li><a href="{{ route('login') }}">ล็อกอิน</a></li>
+                    <li><a href="{{ route('register')}}">ลงทะเบียน</a></li>
+                    @else
+                    <li><a href="/cart/view"> 
                         <i class="fa fa-shopping-cart"></i> ตะกร้า
                         <span class="label label-danger">
                             @if (Session::has('cart_items'))
@@ -49,9 +55,10 @@
                             @endif
                         </span>
                     </a></li>
-                    <li><a href="/home">หน้าแรก</a></li>
+                    <li><a href="#">{{ Auth::user()->name }}</a></li>
                     <li><a href="/product">ข้อมูลสินค้า</a></li>
                     <li><a href="/category">ประเภทสินค้า</a></li>
+                    <li><a href="/logout">ออกจากระบบ</a></li>@endguest
                 </ul>
             </div>
         </div>
